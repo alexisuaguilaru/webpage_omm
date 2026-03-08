@@ -37,7 +37,7 @@ const iconMap: Record<string, string> = {
 			<h1 class="text-4xl font-bold leading-none sm:text-4xl sm:leading-none md:text-[4.8vw] md:leading-none text-[var(--color-off-black)] m-0">
 				<slot name="title">
 					{title}{" "}
-					{highlight && <span class="text-[var(--color-brand-orange)]">{highlight}</span>}
+					{highlight && <span class="hero-highlight">{highlight}</span>}
 				</slot>
 			</h1>
 			{description && <p class="md:text-2xl text-xl md:leading-tight antialiased md:mt-auto text-[var(--color-off-black)] m-0">{description}</p>}
@@ -112,6 +112,14 @@ const iconMap: Record<string, string> = {
 		'var(--color-brand-green)',
 		'var(--color-brand-blue)',
 	];
+
+	const heroHighlights = document.querySelectorAll<HTMLElement>('.hero-highlight');
+	heroHighlights.forEach((highlight) => {
+		highlight.style.setProperty(
+			'--hero-highlight-color',
+			brandColors[Math.floor(Math.random() * brandColors.length)]
+		);
+	});
 
 	const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	if (!reduceMotion) {
@@ -256,6 +264,10 @@ const iconMap: Record<string, string> = {
 <style>
 	.hero-primitives-wrap {
 		isolation: isolate;
+	}
+
+	.hero-highlight {
+		color: var(--hero-highlight-color, var(--color-brand-orange));
 	}
 
 	.hero-grid-glow {

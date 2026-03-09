@@ -30,8 +30,8 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<section class="flex grow flex-col gap-1 md:flex-row min-h-[calc(100vh-4rem-var(--grid-cell))] md:min-h-[calc(100vh-5rem-var(--grid-cell))]" style="padding-bottom: var(--grid-cell);">
-	<div class="rounded-xl overflow-hidden bg-[var(--color-brand-yellow)] p-5 md:p-10 md:w-1/2">
+<section class="flex grow flex-col gap-1 md:flex-row min-h-[calc(100vh-4rem-var(--grid-cell))] md:min-h-[calc(100vh-5rem-var(--grid-cell))]" style="padding-bottom: calc(var(--grid-cell) / 2);">
+	<div class="rounded-xl overflow-hidden bg-[var(--color-brand-main)] p-5 md:p-10 md:w-1/2">
 		<div class="flex flex-col h-full gap-8 md:gap-10">
 			{eyebrow && <p class="text-sm font-semibold uppercase tracking-widest text-[var(--color-off-black)]/60 m-0">{eyebrow}</p>}
 			<h1 class="text-4xl font-bold leading-none sm:text-4xl sm:leading-none md:text-[4.8vw] md:leading-none text-[var(--color-off-black)] m-0">
@@ -70,7 +70,7 @@ const iconMap: Record<string, string> = {
 								href={social.href}
 								target={social.href.startsWith('http') ? '_blank' : undefined}
 								rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
-								class="inline-flex items-center gap-2 text-[var(--color-off-black)] hover:text-[var(--color-brand-orange)] transition-colors"
+								class="inline-flex items-center gap-2 text-[var(--color-off-black)] hover:text-[var(--color-brand-two)] transition-colors"
 							>
 								{iconName ? (
 									<Icon name={iconName} size={24} strokeWidth={1.5} />
@@ -83,7 +83,7 @@ const iconMap: Record<string, string> = {
 				</div>
 			)}		</div>
 	</div>
-	<div class="rounded-xl overflow-hidden p-5 md:p-10 relative z-10 aspect-square bg-[var(--color-brand-yellow)] md:aspect-auto md:w-1/2 flex items-center justify-center">
+	<div class="rounded-xl overflow-hidden p-5 md:p-10 relative z-10 aspect-square bg-[var(--color-brand-main)] md:aspect-auto md:w-1/2 flex items-center justify-center">
 		<slot name="visual">
 			<div class="hero-primitives-wrap relative w-full max-w-[26rem]" aria-hidden="true">
 				<div class="hero-grid-glow"></div>
@@ -107,10 +107,10 @@ const iconMap: Record<string, string> = {
 	import { gsap } from 'gsap';
 
 	const brandColors = [
-		'var(--color-brand-orange)',
-		'var(--color-brand-pink)',
-		'var(--color-brand-green)',
-		'var(--color-brand-blue)',
+		'var(--color-brand-two)',
+		'var(--color-brand-three)',
+		'var(--color-brand-four)',
+		'var(--color-brand-five)',
 	];
 
 	const heroHighlights = document.querySelectorAll<HTMLElement>('.hero-highlight');
@@ -267,14 +267,14 @@ const iconMap: Record<string, string> = {
 	}
 
 	.hero-highlight {
-		color: var(--hero-highlight-color, var(--color-brand-orange));
+		color: var(--hero-highlight-color, var(--color-brand-two));
 	}
 
 	.hero-grid-glow {
 		position: absolute;
 		inset: 8%;
 		border-radius: 1.2rem;
-		background: radial-gradient(circle at 30% 30%, color-mix(in oklab, var(--color-brand-orange) 40%, white), transparent 64%);
+		background: radial-gradient(circle at 30% 30%, color-mix(in oklab, var(--color-brand-two) 40%, white), transparent 64%);
 		opacity: 0.45;
 		filter: blur(14px);
 		z-index: 0;
@@ -283,7 +283,7 @@ const iconMap: Record<string, string> = {
 	.hero-primitive {
 		width: 100%;
 		aspect-ratio: 1 / 1;
-		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 80%, white);
+		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 80%, white);
 		opacity: 0.88;
 		position: relative;
 	}
@@ -299,7 +299,7 @@ const iconMap: Record<string, string> = {
 	.shape-ring {
 		border-radius: 9999px;
 		background: transparent;
-		border: 0.45rem solid color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 78%, white);
+		border: 0.45rem solid color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 78%, white);
 	}
 
 	.shape-diamond {
@@ -323,7 +323,7 @@ const iconMap: Record<string, string> = {
 		inset: 0;
 		margin: auto;
 		border-radius: 9999px;
-		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 80%, white);
+		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 80%, white);
 	}
 
 	.shape-plus::before {
@@ -343,8 +343,8 @@ const iconMap: Record<string, string> = {
 	.shape-bars {
 		background: repeating-linear-gradient(
 			90deg,
-			color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 86%, white) 0,
-			color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 86%, white) 18%,
+			color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 86%, white) 0,
+			color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 86%, white) 18%,
 			transparent 18%,
 			transparent 34%
 		);
@@ -363,6 +363,6 @@ const iconMap: Record<string, string> = {
 		width: 36%;
 		height: 36%;
 		border-radius: 9999px;
-		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-orange)) 82%, white);
+		background-color: color-mix(in oklab, var(--primitive-color, var(--color-brand-two)) 82%, white);
 	}
 </style>

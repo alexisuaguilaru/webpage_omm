@@ -27,13 +27,13 @@ if (!testimonials) {
 ---
 
 <section class="grid gap-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-  <div class="rounded-xl p-5 md:p-10 flex h-full flex-col justify-between gap-5 overflow-visible bg-[var(--color-brand-green)]">
+  <div class="rounded-xl p-5 md:p-10 flex h-full flex-col justify-between gap-5 overflow-visible bg-[var(--color-brand-four)]">
     {eyebrow && <p class="text-sm font-semibold uppercase tracking-widest text-[var(--color-off-black)]/60 m-0">{eyebrow}</p>}
     {title && <h2 class="text-2xl leading-tight antialiased font-bold m-0">{title}</h2>}
     <p class="antialiased mt-auto text-[var(--color-off-black)]/70">Lo que dicen nuestros participantes sobre la <span class="whitespace-nowrap font-bold">OMM</span></p>
   </div>
   {items.map((t) => (
-    <article class="rounded-2xl bg-[var(--color-brand-pink)] flex flex-col w-full h-full p-5 md:p-10">
+    <article class="rounded-2xl bg-[var(--color-brand-three)] flex flex-col w-full h-full p-5 md:p-10">
       <h3 class="mb-5 text-xl leading-tight font-bold m-0">"{t.quote.slice(0, 60)}..."</h3>
       <p class="mt-auto text-sm text-[var(--color-off-black)]/80">{t.quote}</p>
       <footer class="mt-5 flex items-center justify-between">

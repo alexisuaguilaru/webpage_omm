@@ -18,8 +18,9 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<footer class="footer-invert border-t border-[color:var(--color-border)] py-8">
-  <div class="content-shell">
+<footer class="footer-shell">
+  <div class="footer-invert footer-card py-8">
+  <div class="content-shell footer-content">
     <div class="grid gap-10 border-b border-[color:var(--color-border)] pb-10">
       <div class="grid gap-8">
         <div class="grid gap-3">
@@ -39,7 +40,7 @@ const iconMap: Record<string, string> = {
                     <Icon
                       name={iconName}
                       size={18}
-                      strokeWidth={1.5}
+                      stroke-width={1.5}
                       class="text-ink"
                       aria-hidden={true}
                     />
@@ -80,9 +81,18 @@ const iconMap: Record<string, string> = {
       </div>
     </div>
   </div>
+  </div>
 </footer>
 
 <style>
+  .footer-shell {
+    width: 100%;
+  }
+
+  .footer-card {
+    border-top: 1px solid var(--color-border);
+  }
+
   :global(:root[data-theme="light"]) .footer-invert {
     --color-ink: var(--color-off-white);
     --color-muted: color-mix(in oklab, var(--color-off-white) 75%, transparent);
@@ -103,5 +113,28 @@ const iconMap: Record<string, string> = {
     background-color: #ffffff;
     color: var(--color-off-black);
     color-scheme: light;
+  }
+
+  @media (min-width: 768px) {
+    .footer-shell {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding-left: var(--grid-cell);
+      padding-right: var(--grid-cell);
+      padding-top: calc(var(--grid-cell) / 2);
+      padding-bottom: calc(var(--grid-cell) / 1);
+    }
+
+    .footer-card {
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .footer-content {
+      max-width: none;
+      padding-left: clamp(1.25rem, 2vw, 2rem);
+      padding-right: clamp(1.25rem, 2vw, 2rem);
+    }
   }
 </style>

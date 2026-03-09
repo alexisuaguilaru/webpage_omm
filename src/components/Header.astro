@@ -8,12 +8,12 @@ import { Icon } from "astro-icon/components";
 const subpath = import.meta.env.BASE_URL;
 
 const brandColors = [
-  "var(--color-brand-orange)",
-  "var(--color-brand-pink)",
-  "var(--color-brand-green)",
-  "var(--color-brand-blue)",
+  "var(--color-brand-two)",
+  "var(--color-brand-three)",
+  "var(--color-brand-four)",
+  "var(--color-brand-five)",
 ];
-const darkTextColors = new Set(["var(--color-brand-blue)"]);
+const darkTextColors = new Set([]);
 const navLinks = site.nav ?? [];
 
 ---
@@ -22,7 +22,7 @@ const navLinks = site.nav ?? [];
   <a
     href={subpath}
     aria-label={site.title}
-    class="rounded-xl overflow-hidden px-5 md:px-8 flex h-full items-center bg-[var(--color-brand-yellow)] font-bold leading-none shrink min-w-0 md:shrink-0 md:justify-start md:text-lg md:leading-none no-underline text-[var(--color-off-black)] gap-3"
+    class="rounded-xl overflow-hidden px-5 md:px-8 flex h-full items-center bg-[var(--color-brand-main)] font-bold leading-none shrink min-w-0 md:shrink-0 md:justify-start md:text-lg md:leading-none no-underline text-[var(--color-off-black)] gap-3"
   >
     <Icon
       name="tabler:math-symbols"
@@ -32,7 +32,7 @@ const navLinks = site.nav ?? [];
     />
     <span class="whitespace-nowrap overflow-hidden text-ellipsis">{site.title}</span>
   </a>
-  <div class="rounded-xl overflow-hidden grow bg-[var(--color-brand-yellow)] min-w-1 shrink"></div>
+  <div class="rounded-xl overflow-hidden grow bg-[var(--color-brand-main)] min-w-1 shrink"></div>
   <nav
     class="hidden md:flex items-center gap-1 shrink-0"
   >
@@ -40,13 +40,13 @@ const navLinks = site.nav ?? [];
       const bg = brandColors[i % brandColors.length];
       const textColor = darkTextColors.has(bg) ? "var(--color-off-white)" : "var(--color-off-black)";
       return (
-        <a href={link.href} class="rounded-xl px-5 py-2 h-full flex items-center text-sm font-semibold tracking-wide uppercase hover:bg-[var(--color-off-black)] hover:text-[var(--color-off-white)] transition-colors no-underline whitespace-nowrap" style={`background:${bg};color:${textColor}`}>{link.label}</a>
+        <a href={link.href} class="rounded-xl px-5 py-2 h-full flex items-center text-sm font-semibold tracking-wide uppercase hover:bg-[var(--color-off-black) transition-colors no-underline whitespace-nowrap" style={`background:${bg};color:${textColor}`}>{link.label}</a>
       );
     })}
   </nav>
   <div class="flex items-center gap-1 shrink-0 h-full">
     <button
-      class="inline-flex items-center gap-2 group rounded-xl text-[var(--color-off-black)] hover:bg-[var(--color-off-black)] hover:text-[var(--color-off-white)] antialiased transition-colors text-lg justify-center bg-[var(--color-brand-yellow)] px-6 h-full md:hidden cursor-pointer"
+      class="inline-flex items-center gap-2 group rounded-xl text-[var(--color-off-black)] hover:bg-[var(--color-off-black)] hover:text-[var(--color-off-white)] antialiased transition-colors text-lg justify-center bg-[var(--color-brand-main)] px-6 h-full md:hidden cursor-pointer"
       type="button"
       id="nav-toggle"
       aria-label="Toggle navigation"

@@ -22,7 +22,7 @@ const authors = defineCollection({
 	loader: file('src/content/authors.yml'),
 	schema: ({ image }) =>
 		z.object({
-			id: z.string(),
+			id: z.coerce.number().int().positive(),
 			title: z.string(),
 			image: image(),
 			designation: z.string(),

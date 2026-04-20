@@ -225,3 +225,27 @@
   image: "../assets/team/eric.png"
   designation: "Doctor en Matemáticas"
   type: "exmiembro"
+
+- id: "39"
+  title: "Andrei González Galeano"
+  image: "../assets/team/andrei.jpg"
+  designation: "Posdoctor CCM"
+  type: "entrenador"
+
+- id: "40"
+  title: "Leonardo Zalapa Rodríguez"
+  image: "../assets/team/leonardo.jpg"
+  designation: "Estudiante Posgrado IFM"
+  type: "entrenador"
+
+- id: "41"
+  title: "Imelda Trejo Lorenzo"
+  image: "../assets/team/imelda.jpg"
+  designation: "Investigadora CCM"
+  type: "entrenador"
+
+- id: "42"
+  title: "Andrea Espinosa Sierra"
+  image: "../assets/team/andrea.jpg"
+  designation: "Estudiante LFisMat UMSNH"
+  type: "entrenador"

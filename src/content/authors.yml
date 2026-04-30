@@ -64,13 +64,13 @@
   designation: "Estudiante LTICs | Servicio Social"
   type: "exmiembro"
 
-- id: "12"
+- id: "27"
   title: "Mariana Cabrera Vázquez"
   image: "../assets/team/mariana.png"
   designation: "Difusión CSAM"
   type: "comite"
 
-- id: "13"
+- id: "22"
   title: "Erandi Torres Martínez"
   image: "../assets/team/erandi.png"
   designation: "Difusión CSAM"
@@ -124,7 +124,7 @@
   designation: "Ex-olímpico | Estudiante LTICs | Servicio Social"
   type: "comite"
 
-- id: "22"
+- id: "13"
   title: "Luis Alberto García"
   image: "../assets/team/luisalberto.png"
   designation: "Ex-olímpico | Estudiante LTICs | Servicio Social"
@@ -154,7 +154,7 @@
   designation: "Estudiante LTICs"
   type: "entrenador"
 
-- id: "27"
+- id: "12"
   title: "Rodrigo Cortez"
   image: "../assets/team/rodrigo.png"
   designation: "Egresado LTICs | IT Consultant"
